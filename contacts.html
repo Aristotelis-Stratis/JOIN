@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACTS HTML</title>
+    <link rel="icon" type="image/x-icon" href="./assets/img/favicon/logo.png">
+    <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/fonts.css">
+    <script src="./script.js"></script>
+    <script src="./js/contacts-data.js"></script>
+    <script src="./js/contacts-data_2.js"></script>
+    <script src="./js/contacts.template.js"></script>
+    <script src="./js/storage.js"></script>
+    <script src="./js/login-reg.js"></script>
+</head>
+
+<body onload="includeHTML(() => { checkUserLogin(setProfileInitials); }),initContacts();">
+    <section class="main-container">
+        <div w3-include-html="./assets/templates/nav.html"></div>
+        <div class="right-section">
+            <div w3-include-html="./assets/templates/header.html"></div>
+            <div class="contacts-content" id="main-content">
+                <div class="contact-list" id="contact-list">
+                    <div class="add-contact">
+                        <button class="add-contact-button" onclick="addNewContact()">
+                            Add new contact
+                            <img src="assets/img/icons/contact_add.png" alt="">
+                        </button>
+                    </div>
+                    <div class="list-container" id="contact-container"></div>
+
+                    <button class="add-contact-mobile" onclick="addNewContact()">
+                        <img src="assets/img/icons/contact_add.png" alt="Add Contact">
+                    </button>
+                </div>
+                <div class="contacts-text" id="text-content">
+                    <div class="arrow-back" onclick="closeContactDetails()">
+                        <img src="assets/img/icons/arrow_blue.png" alt="Back">
+                    </div>
+                    <div class="contact-view" id="contact-details">
+                        <div class="contacts-title-bar">
+                            <h1>Contacts</h1>
+                            <div class="seperator-vertical"></div>
+                            <span>Better with a team</span>
+                            <div class="seperator-mobile"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="confirmation-container" style="display:none;" id="confirmation">
+                <span></span>
+            </div>
+        </div>
+        </div>
+        <div class="overlay" id="aco" style="display:none;">
+            <div class="add-contact-overlay" id="fly-in-overlay">
+                <div class="aco-left">
+                    <div class="aco-left-container">
+                        <img src="assets/img/favicon/JOIN-logo-white.png" alt="Join Logo">
+                        <span id="headline">Add contact</span>
+                        <p id="sub-headline">Tasks are better with a team!</p>
+                        <div class="seperator-overlay"></div>
+                    </div>
+                </div>
+                <div class="aco-right">
+                    <div class="aco-right-icon" id="aco-icon">
+                        <img src="assets/img/icons/aco_person.png" alt="Avatar">
+                    </div>
+                    <form onsubmit="return false" method="post">
+                        <div class="aco-right-input-container">
+                            <input class="aco-input input-bg-1" minlength="2" maxlength="30" placeholder="Name"
+                                id="inputName" required>
+                        </div>
+                        <div class="aco-right-input-container">
+                            <input class="aco-input input-bg-2" type="Email" placeholder="Email" id="inputEmail"
+                                required>
+                        </div>
+                        <div class="aco-right-input-container">
+                            <input class="aco-input input-bg-3 " minlength="4" maxlength="27" type="tel"
+                                placeholder="Phone" id="inputNumber" required>
+                        </div>
+                        <div class="aco-button-container">
+                            <button class="fb lb" id="lb" onclick="closeContactOverlay()">Cancel <img
+                                    src="assets/img/icons/x.png" alt="Cancel"></button>
+                            <button class="fb rb" id="rb">Create
+                                contact <img src="assets/img/icons/check.png" alt="Create Contact"></button>
+                        </div>
+                    </form>
+                    <div class="aco-close" onclick="closeContactOverlay()">
+                        <img src="assets/img/icons/x.png" alt="Close Overlay">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
