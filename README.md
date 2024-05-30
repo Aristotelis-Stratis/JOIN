@@ -25,7 +25,6 @@ Welcome to the JOIN Project! This project is designed to enhance productivity wi
 This project is intended for educational purposes only and may not be used for commercial purposes.
 
 ## Screenshots
-<img width="250" alt="join1" src="assets/img/visual/join1.png">
 <img width="250" alt="join2" src="assets/img/visual/join2.png">
 
 ## Author
